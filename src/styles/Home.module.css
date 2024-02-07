@@ -1,0 +1,15 @@
+.container {
+  padding: 0 3rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 3rem 0;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}

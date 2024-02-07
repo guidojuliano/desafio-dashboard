@@ -1,0 +1,251 @@
+{
+  "grafico": {
+    "clientes": {
+      "clientesTotales": 77900,
+      "clientesNuevos": {
+        "total": 40000,
+        "filtrado": {
+          "hoy": {
+            "00:00": 100,
+            "01:00": 200,
+            "02:00": 300,
+            "03:00": 400,
+            "04:00": 500,
+            "05:00": 600,
+            "06:00": 700,
+            "07:00": 800,
+            "08:00": 900,
+            "09:00": 1000,
+            "10:00": 1100,
+            "11:00": 1500,
+            "12:00": 1300,
+            "13:00": 2000,
+            "14:00": 1300,
+            "15:00": 2000,
+            "16:00": 2500,
+            "17:00": 1800,
+            "18:00": 1900,
+            "19:00": 2000,
+            "20:00": 2100,
+            "21:00": 2200,
+            "22:00": 2300,
+            "23:00": 2500
+          },
+          "ultimos7Dias": {
+            "lunes": 2500,
+            "martes": 3000,
+            "miercoles": 2500,
+            "jueves": 2000,
+            "viernes": 1800,
+            "sabado": 2500,
+            "domingo": 2000
+          },
+          "esteMes": 1200,
+          "ultimos7Meses": 5000,
+          "ytgYtd": { "ytg": 8000, "ytd": 10000 },
+          "unAno": 10000,
+          "maximo": 15000
+        }
+      },
+      "clientesCompraron": {
+        "total": 70000,
+        "filtrado": {
+          "hoy": {
+            "00:00": 100,
+            "01:00": 200,
+            "02:00": 50,
+            "03:00": 60,
+            "04:00": 500,
+            "05:00": 600,
+            "06:00": 700,
+            "07:00": 800,
+            "08:00": 900,
+            "09:00": 1000,
+            "10:00": 1100,
+            "11:00": 600,
+            "12:00": 1300,
+            "13:00": 400,
+            "14:00": 1500,
+            "15:00": 700,
+            "16:00": 900,
+            "17:00": 1200,
+            "18:00": 1300,
+            "19:00": 1200,
+            "20:00": 1400,
+            "21:00": 900,
+            "22:00": 1500,
+            "23:00": 1500
+          },
+          "ultimos7Dias": {
+            "lunes": 4500,
+            "martes": 7000,
+            "miercoles": 5000,
+            "jueves": 6000,
+            "viernes": 4900,
+            "sabado": 6500,
+            "domingo": 4000
+          },
+          "esteMes": 1200,
+          "ultimos7Meses": 5000,
+          "ytgYtd": { "ytg": 9000, "ytd": 11000 },
+          "unAno": 10000,
+          "maximo": 15000
+        }
+      }
+    },
+
+    "transacciones": {
+      "total": 5000,
+      "filtrado": {
+        "hoy": 50,
+        "ultimos7Dias": {
+          "lunes": 4500,
+          "martes": 7000,
+          "miercoles": 5000,
+          "jueves": 6000,
+          "viernes": 4900,
+          "sabado": 6500,
+          "domingo": 4000
+        },
+        "esteMes": 800,
+        "ultimos7Meses": 2000,
+        "ytgYtd": 3500,
+        "unAno": 4000,
+        "maximo": 5000
+      }
+    },
+    "cashbacks": {
+      "cashbackAcumulado": {
+        "total": 15000,
+        "filtrado": {
+          "hoy": 20,
+          "ultimos7Dias": {
+            "lunes": 200,
+            "martes": 500,
+            "miercoles": 600,
+            "jueves": 700,
+            "viernes": 1000,
+            "sabado": 1200,
+            "domingo": 1500
+          },
+          "esteMes": 500,
+          "ultimos7Meses": 1200,
+          "ytgYtd": 1800,
+          "unAno": 1900,
+          "maximo": 2000
+        }
+      },
+      "cashbackTotal": {
+        "total": 20000,
+        "filtrado": {
+          "hoy": 20,
+          "ultimos7Dias": {
+            "lunes": 300,
+            "martes": 400,
+            "miercoles": 500,
+            "jueves": 800,
+            "viernes": 1000,
+            "sabado": 1500,
+            "domingo": 1700
+          },
+          "esteMes": 500,
+          "ultimos7Meses": 1200,
+          "ytgYtd": 1800,
+          "unAno": 1900,
+          "maximo": 2000
+        }
+      },
+      "cashbackGenerado": {
+        "total": 12000,
+        "filtrado": {
+          "hoy": 20,
+          "ultimos7Dias": {
+            "lunes": 0,
+            "martes": 80,
+            "miercoles": 100,
+            "jueves": 500,
+            "viernes": 300,
+            "sabado": 600,
+            "domingo": 1000
+          },
+          "esteMes": 500,
+          "ultimos7Meses": 1200,
+          "ytgYtd": 1800,
+          "unAno": 1900,
+          "maximo": 2000
+        }
+      }
+    },
+    "dinero": {
+      "dineroTotal": {
+        "total": 1000000,
+        "filtrado": {
+          "hoy": 10000,
+          "ultimos7Dias": {
+            "lunes": 2000,
+            "martes": 1500,
+            "miercoles": 7000,
+            "jueves": 6000,
+            "viernes": 15000,
+            "sabado": 12000,
+            "domingo": 4000
+          },
+          "esteMes": 800000,
+          "ultimos7Meses": 900000,
+          "ytg": { "ano2022": 980000, "ano2023": 1200000 },
+          "ytd": { "ano2022": 980000, "ano2023": 1200000 },
+          "unAno": 980000,
+          "maximo": 1000000
+        }
+      },
+      "dineroVentas": {
+        "total": 1000000,
+        "filtrado": {
+          "hoy": 10000,
+          "ultimos7Dias": {
+            "lunes": 2000,
+            "martes": 1700,
+            "miercoles": 7000,
+            "jueves": 5900,
+            "viernes": 14000,
+            "sabado": 11000,
+            "domingo": 5000
+          },
+          "esteMes": 800000,
+          "ultimos7Meses": 900000,
+          "ytg": { "ano2022": 980000, "ano2023": 1200000 },
+          "ytd": { "ano2022": 980000, "ano2023": 1200000 },
+          "unAno": 980000,
+          "maximo": 1000000
+        }
+      }
+    }
+  },
+  "pulso": {
+    "cashbackAcumulado": {
+      "septiembre": 250000,
+      "octubre": 300000,
+      "noviembre": 175000
+    },
+    "cashback": {
+      "septiembre": {
+        "dia1": 30000,
+        "dia10": 40000,
+        "dia20": 50000
+      },
+      "octubre": {
+        "dia1": 30000,
+        "dia10": 200000,
+        "dia20": 50000
+      },
+      "noviembre": {
+        "dia1": 100000,
+        "dia10": 120000,
+        "dia20": 130000
+      }
+    },
+    "clientesTotales": 81420,
+    "ventasTotales": 1100,
+    "montoTotal": 70000000
+  }
+}
