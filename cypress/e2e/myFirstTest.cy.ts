@@ -1,3 +1,5 @@
+export {};
+
 describe('Mostrar si existen estos elementos en la pantalla', () => {
   it('passes', () => {
     cy.viewport(1920, 1080);
