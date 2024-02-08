@@ -1,43 +1,35 @@
-import React from 'react';
-import { Switch } from '@mui/material';
-import { styled } from '@mui/system';
+import React, { useState } from 'react';
+import styles from './CustomSwitch.module.css';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
-const CustomSwitch = styled(Switch)(({ theme }) => ({
-  width: 150,
-  height: 35,
-  backgroundColor: '#ffffff',
-  borderRadius: 20,
-  border: `3px solid #644BBA`,
-  '& .MuiSwitch-thumb': {
-    color: '#ffffff',
-    width: 70,
-    height: 25,
-    position: 'absolute',
-    borderRadius: 20,
-    backgroundColor: '#644BBA',
-    top: 2,
-    left: 2,
-  },
-  '& .MuiSwitch-track': {
-    backgroundColor: '#ffffff',
-    opacity: 1,
-    transform: 'scale(1)',
-  },
-}));
+interface CustomSwitchProps {
+  onOptionChange: (option: 'Grafico' | 'Pulso') => void;
+}
 
-export default function CustomizedSwitches() {
-  const [checked, setChecked] = React.useState(true);
+const CustomSwitch: React.FC<CustomSwitchProps> = ({ onOptionChange }) => {
+  const [selectedOption, setSelectedOption] = useState<'Grafico' | 'Pulso'>('Grafico');
 
-  const handleChange = (event: any) => {
-    setChecked(event.target.checked);
+  const handleOptionToggle = () => {
+    const newOption = selectedOption === 'Grafico' ? 'Pulso' : 'Grafico';
+    setSelectedOption(newOption);
+    onOptionChange(newOption);
   };
 
   return (
-    <div>
-      <CustomSwitch checked={checked} onChange={handleChange}>
-        <div className="optionText">Grafico</div>
-        <div className="optionText">Pulso</div>
-      </CustomSwitch>
+    <div className={styles['custom-switch']} onClick={handleOptionToggle}>
+      <div className={styles['switch-container']}>
+        <div className={`${styles.option} ${selectedOption === 'Grafico' ? styles.selected : ''}`}>
+          <BarChartIcon />
+          Gráfico
+        </div>
+        <div className={`${styles.option} ${selectedOption === 'Pulso' ? styles.selected : ''}`}>
+          <StarRoundedIcon /> Pulso
+        </div>
+        <div className={`${styles.slider} ${selectedOption === 'Pulso' ? styles['slide-right'] : ''}`} />
+      </div>
     </div>
   );
-}
+};
+
+export default CustomSwitch;

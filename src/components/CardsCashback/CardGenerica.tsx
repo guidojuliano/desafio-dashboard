@@ -35,7 +35,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
               <Typography color={'inherit'}>Monto total</Typography>
             </Grid>
             <Grid item>
-              <Typography color={'inherit'}>{montoTotal}</Typography>
+              <Typography color={'inherit'}>${montoTotal}</Typography>
             </Grid>
           </Grid>
           <Grid container item justifyContent={'flex-start'}>
@@ -48,7 +48,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
               <Typography color={'inherit'}>Acumulado</Typography>
             </Grid>
             <Grid item>
-              <Typography color={'inherit'}>{acumulado}</Typography>
+              <Typography color={'inherit'}>${acumulado}</Typography>
             </Grid>
           </Grid>
           {mes === 'Septiembre' && (
@@ -58,7 +58,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 01/09</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{facturadoPrincipio}</Typography>
+                  <Typography color={'inherit'}>${facturadoPrincipio}</Typography>
                 </Grid>
               </Grid>
               <Grid container item justifyContent={'space-between'}>
@@ -66,7 +66,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 10/09</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{FacturadoMedio}</Typography>
+                  <Typography color={'inherit'}>${FacturadoMedio}</Typography>
                 </Grid>
               </Grid>
               <Grid container item justifyContent={'space-between'}>
@@ -74,7 +74,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 20/09</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{FacturadoFinal}</Typography>
+                  <Typography color={'inherit'}>${FacturadoFinal}</Typography>
                 </Grid>
               </Grid>
             </>
@@ -86,7 +86,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 01/10</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{facturadoPrincipio}</Typography>
+                  <Typography color={'inherit'}>${facturadoPrincipio}</Typography>
                 </Grid>
               </Grid>
               <Grid container item justifyContent={'space-between'}>
@@ -94,7 +94,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 10/10</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{FacturadoMedio}</Typography>
+                  <Typography color={'inherit'}>${FacturadoMedio}</Typography>
                 </Grid>
               </Grid>
               <Grid container item justifyContent={'space-between'}>
@@ -102,7 +102,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 20/10</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{FacturadoFinal}</Typography>
+                  <Typography color={'inherit'}>${FacturadoFinal}</Typography>
                 </Grid>
               </Grid>
             </>
@@ -114,7 +114,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 01/11</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{facturadoPrincipio}</Typography>
+                  <Typography color={'inherit'}>${facturadoPrincipio}</Typography>
                 </Grid>
               </Grid>
               <Grid container item justifyContent={'space-between'}>
@@ -122,7 +122,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 10/11</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{FacturadoMedio}</Typography>
+                  <Typography color={'inherit'}>${FacturadoMedio}</Typography>
                 </Grid>
               </Grid>
               <Grid container item justifyContent={'space-between'}>
@@ -130,7 +130,7 @@ export default function CardGenerica({ clientes, ventasTotales, montoTotal, acum
                   <Typography color={'inherit'}>Facturado 20/11</Typography>
                 </Grid>
                 <Grid item>
-                  <Typography color={'inherit'}>{FacturadoFinal}</Typography>
+                  <Typography color={'inherit'}>${FacturadoFinal}</Typography>
                 </Grid>
               </Grid>
             </>

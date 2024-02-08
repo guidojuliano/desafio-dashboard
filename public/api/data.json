@@ -229,23 +229,49 @@
     },
     "cashback": {
       "septiembre": {
+        "clientesTotales": 80420,
+        "ventasTotales": 4000,
+        "montoTotal": 179000000,
+        "acumulado": 600000,
         "dia1": 30000,
         "dia10": 40000,
         "dia20": 50000
       },
       "octubre": {
+        "clientesTotales": 81420,
+        "ventasTotales": 3800,
+        "montoTotal": 170000000,
+        "acumulado": 300000,
         "dia1": 30000,
         "dia10": 200000,
         "dia20": 50000
       },
       "noviembre": {
+        "clientesTotales": 81700,
+        "ventasTotales": 1100,
+        "montoTotal": 70000000,
+        "acumulado": 500000,
         "dia1": 100000,
         "dia10": 120000,
         "dia20": 130000
       }
+    }
+  },
+  "pulsoGrafico": {
+    "dia01": {
+      "septiembre": 30000,
+      "octubre": 50000,
+      "noviembre": 20000
     },
-    "clientesTotales": 81420,
-    "ventasTotales": 1100,
-    "montoTotal": 70000000
+    "dia10": {
+      "septiembre": 40000,
+      "octubre": 250000,
+      "noviembre": 120000
+    },
+    "dia20": {
+      "septiembre": 50000,
+      "octubre": 50000,
+      "noviembre": 130000
+    }
   }
 }

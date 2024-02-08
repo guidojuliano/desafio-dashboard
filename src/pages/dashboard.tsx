@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import { useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import CardGenerica from '../components/CardsCashback/CardGenerica';
 import { Button, Grid, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import CustomSwitch from '../components/CustomSwitch/CustomSwitch';
@@ -20,10 +19,16 @@ import ChartWeekClientes from '../components/Charts/ChartWeekClientes';
 import ChartWeekClientesDinero from '../components/Charts/ChartWeekClientesDinero';
 import ChartWeekTransaccionesDinero from '../components/Charts/ChartWeekTransaccionesDinero';
 import ChartWeekClientesCashback from '../components/Charts/ChartWeekClientesCashback';
+import CardsCashback from '../components/CardsCashback/Cards';
+import FiltersPulso from '../components/Filtros/FiltrosDashboardPulso';
+import ChartPulso from '../components/Charts/ChartPulso';
+import TablePulso from '../components/Tables/TablePulso';
 
 const Dashboard: NextPage = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('today');
   const [selectedFilterDashboard, setSelectedFilterDashboard] = useState<string[]>(['clientes']);
+  const [selectedOption, setSelectedOption] = useState<'Grafico' | 'Pulso'>('Grafico');
+  const [selectedFilterPulso, setSelectedFilterPulso] = useState<string>('pulso');
 
   const handleFilterChange = (filter: string) => {
     setSelectedFilter(filter);
@@ -31,6 +36,14 @@ const Dashboard: NextPage = () => {
 
   const handleFilterDashboardChange = (filter: string) => {
     setSelectedFilterDashboard((prevFilters) => (prevFilters.includes(filter) ? prevFilters.filter((f) => f !== filter) : [...prevFilters, filter]));
+  };
+
+  const handleOptionChange = (option: 'Grafico' | 'Pulso') => {
+    setSelectedOption(option);
+  };
+
+  const handleFilterPulsoChange = (filter: string) => {
+    setSelectedFilterPulso(filter);
   };
 
   const renderChart = () => {
@@ -158,7 +171,62 @@ const Dashboard: NextPage = () => {
       case 'custom':
         return <p>Custom</p>;
       default:
-        return <p>Today</p>;
+        return (
+          <>
+            {selectedFilterDashboard.includes('clientes') && selectedFilterDashboard.length === 1 && (
+              <>
+                <Grid item>
+                  <ChartHoyClientes />
+                </Grid>
+                <Grid item container justifyContent={'flex-end'}>
+                  <Button variant="text" color="secondary" startIcon={<DownloadIcon />}>
+                    <Typography fontFamily={'inherit'} fontSize={'bold'}>
+                      Exportar Tabla
+                    </Typography>
+                  </Button>
+                </Grid>
+                <Grid item container direction={'row'} spacing={1} justifyContent={'center'}>
+                  <TableHoyClientes />
+                </Grid>
+              </>
+            )}
+          </>
+        );
+    }
+  };
+
+  const renderChartPulso = () => {
+    switch (selectedFilterPulso) {
+      case 'pulso':
+        return (
+          <>
+            <Grid item>
+              <ChartPulso />
+            </Grid>
+            <Grid item container justifyContent={'flex-end'}>
+              <Button variant="text" color="secondary" startIcon={<DownloadIcon />}>
+                <Typography fontFamily={'inherit'} fontSize={'bold'}>
+                  Exportar Tabla
+                </Typography>
+              </Button>
+            </Grid>
+            <Grid item container direction={'row'} spacing={1} justifyContent={'center'}>
+              <TablePulso />
+            </Grid>
+          </>
+        );
+      case 'sixMonth':
+        return <p>SixMonth</p>;
+      case 'ytd':
+        return <p>YTD</p>;
+      case 'year':
+        return <p>Year</p>;
+      case 'max':
+        return <p>Max</p>;
+      case 'custom':
+        return <p>Custom</p>;
+      default:
+        return <p>Pulso</p>;
     }
   };
 
@@ -174,32 +242,38 @@ const Dashboard: NextPage = () => {
         <Grid container spacing={2}>
           {/* Columna izquierda con componente de gráfico */}
           <Grid item xs={10}>
-            <Grid container item direction={'row'} spacing={3}>
-              <Filters onChange={handleFilterChange} selectedFilter={selectedFilter} />
-            </Grid>
-            <Grid item sx={{ paddingTop: 5 }}>
-              <DashboardFilters onToggleFilter={handleFilterDashboardChange} selectedFilters={selectedFilterDashboard} />
-            </Grid>
-            <Grid container item direction={'column'} spacing={3} sx={{ padding: 5 }}>
-              {renderChart()}
-            </Grid>
+            {selectedOption === 'Grafico' && (
+              <>
+                <Grid container item direction={'row'} spacing={3}>
+                  <Filters onChange={handleFilterChange} selectedFilter={selectedFilter} />
+                </Grid>
+                <Grid item sx={{ paddingTop: 5 }}>
+                  <DashboardFilters onToggleFilter={handleFilterDashboardChange} selectedFilters={selectedFilterDashboard} />
+                </Grid>
+                <Grid container item direction={'column'} spacing={3} sx={{ padding: 5 }}>
+                  {renderChart()}
+                </Grid>
+              </>
+            )}
+            {selectedOption === 'Pulso' && (
+              <>
+                <Grid container item direction={'row'} spacing={3}>
+                  <FiltersPulso onChange={handleFilterPulsoChange} selectedFilter={selectedFilterPulso} />
+                </Grid>
+                <Grid container item direction={'column'} spacing={3} sx={{ padding: 5 }}>
+                  {renderChartPulso()}
+                </Grid>
+              </>
+            )}
           </Grid>
 
           {/* Columna derecha con tarjetas */}
           <Grid item xs={2}>
             <Grid container item direction="column" spacing={2}>
               <Grid item>
-                <CustomSwitch />
+                <CustomSwitch onOptionChange={handleOptionChange} />
               </Grid>
-              <Grid item>
-                <CardGenerica clientes={10} ventasTotales={100} montoTotal={1000} acumulado={100} mes={'Noviembre'} facturadoPrincipio={100} FacturadoMedio={200} FacturadoFinal={300} />
-              </Grid>
-              <Grid item>
-                <CardGenerica clientes={10} ventasTotales={100} montoTotal={1000} acumulado={100} mes={'Octubre'} facturadoPrincipio={100} FacturadoMedio={200} FacturadoFinal={300} />
-              </Grid>
-              <Grid item>
-                <CardGenerica clientes={10} ventasTotales={100} montoTotal={1000} acumulado={100} mes={'Septiembre'} facturadoPrincipio={100} FacturadoMedio={200} FacturadoFinal={300} />
-              </Grid>
+              <CardsCashback />
             </Grid>
           </Grid>
         </Grid>

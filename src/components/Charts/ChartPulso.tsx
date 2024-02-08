@@ -4,7 +4,7 @@ import { Chart } from 'react-chartjs-2';
 import useData from '../../hooks/useData';
 import CircularProgress from '@mui/material/CircularProgress';
 
-const ChartWeekClientesDinero = () => {
+const ChartWeekClientesCashback = () => {
   const { data, isLoading, isError } = useData();
 
   ChartJS.register(LinearScale, CategoryScale, BarElement, PointElement, LineElement, Legend, Tooltip, LineController, BarController);
@@ -17,7 +17,7 @@ const ChartWeekClientesDinero = () => {
     return <p>Error al cargar los datos</p>;
   }
 
-  const labels = Object.keys(data?.grafico?.clientes?.clientesNuevos?.filtrado?.ultimos7Dias) || [];
+  const labels = ['Septiembre', 'Octubre', 'Noviembre'];
 
   const mapData = (sourceData: any) => {
     return Object.values(sourceData).map((value) => value);
@@ -28,61 +28,36 @@ const ChartWeekClientesDinero = () => {
     datasets: [
       {
         type: 'line' as const,
-        label: 'Dinero total',
-        data: mapData(data.grafico.dinero.dineroTotal.filtrado.ultimos7Dias),
-        backgroundColor: '#EB3535',
-        borderColor: '#EB3535',
-        fill: false,
-        yAxisID: 'y1',
-      },
-      {
-        type: 'line' as const,
-        label: 'Ventas',
-        data: mapData(data.grafico.dinero.dineroVentas.filtrado.ultimos7Dias),
+        label: 'Cashback acumulado',
+        data: mapData(data.pulso.cashbackAcumulado),
         backgroundColor: '#7A35EB',
         borderColor: '#7A35EB',
-        fill: false,
         yAxisID: 'y1',
       },
-      {
-        type: 'line' as const,
-        label: 'Devoluciones',
-        data: [],
-        backgroundColor: 'gray',
-        borderColor: 'gray',
-        hidden: true,
-      },
+
       {
         type: 'bar' as const,
-        label: 'Clientes totales',
-        data: [],
-        backgroundColor: '#EB7635',
-        borderColor: '#EB7635',
-        hidden: true,
-      },
-      {
-        type: 'bar' as const,
-        label: 'Clientes Nuevos',
-        data: mapData(data.grafico.clientes.clientesNuevos.filtrado.ultimos7Dias),
+        label: 'Dia 01',
+        data: mapData(data.pulsoGrafico.dia01),
         backgroundColor: '#2DCF5A',
         borderColor: '#2DCF5A',
         yAxisID: 'y',
       },
       {
         type: 'bar' as const,
-        label: 'Compraron',
-        data: mapData(data.grafico.clientes.clientesCompraron.filtrado.ultimos7Dias),
+        label: 'Dia 10',
+        data: mapData(data.pulsoGrafico.dia10),
         backgroundColor: '#358DEB',
         borderColor: '#358DEB',
         yAxisID: 'y',
       },
       {
         type: 'bar' as const,
-        label: 'No compraron',
-        data: [],
-        backgroundColor: '#EB3535',
-        borderColor: '#EB3535',
-        hidden: true,
+        label: 'Dia 20',
+        data: mapData(data.pulsoGrafico.dia20),
+        backgroundColor: '#EB7635',
+        borderColor: '#EB7635',
+        yAxisID: 'y',
       },
     ],
   };
@@ -131,4 +106,4 @@ const ChartWeekClientesDinero = () => {
   return <Chart type="bar" options={options} data={dataChart} height={'100px'} />;
 };
 
-export default ChartWeekClientesDinero;
+export default ChartWeekClientesCashback;

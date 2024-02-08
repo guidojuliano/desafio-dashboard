@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Inicializar
 
 First, run the development server:
 
@@ -12,23 +12,28 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Descripción del proyecto
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Este proyecto es una aplicación web que permite mostrar diferentes graficos y tablas de un dashboard dependiendo de los filtros seleccionados.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Los datos fueron creados de manera local en la carpeta public/api/data.json, los cuales son consumidos por la aplicación mediante un custom hook.
 
-## Learn More
+Los filtros funcionales son:
 
-To learn more about Next.js, take a look at the following resources:
+# GRAFICO
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- HOY x Clientes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- 7D x Clientes
 
-## Deploy on Vercel
+- 7D x Clientes/Dinero
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 7D x Clientes/Cashback
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 7D x Transacciones/Dinero
+
+- YTD/YTG x Dinero
+
+# PULSO
+
+- PULSO

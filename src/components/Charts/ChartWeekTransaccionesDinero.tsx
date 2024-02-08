@@ -66,6 +66,8 @@ const ChartWeekTransaccionesDinero = () => {
   const options = {
     indexAxis: 'x' as const,
 
+    barThickness: 30,
+
     elements: {
       bar: {
         borderWidth: 1,
