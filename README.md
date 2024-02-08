@@ -5,9 +5,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -20,7 +20,7 @@ Los datos fueron creados de manera local en la carpeta public/api/data.json, los
 
 Los filtros funcionales son:
 
-# GRAFICO
+### GRAFICO
 
 - HOY x Clientes
 
@@ -34,6 +34,10 @@ Los filtros funcionales son:
 
 - YTD/YTG x Dinero
 
-# PULSO
+### PULSO
 
 - PULSO
+
+## Analytics
+
+- https://analytics.google.com/analytics/web/?authuser=1#/p426720683/reports/reportinghub?params=_u..nav%3Dmaui
