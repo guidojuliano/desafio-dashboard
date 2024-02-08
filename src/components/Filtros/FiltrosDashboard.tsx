@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Grid, Typography } from '@mui/material';
 import { FiltersProps } from './FiltrosDashboard.types';
 import EventIcon from '@mui/icons-material/Event';
-import VisibilityIcon from '@mui/icons-material/Visibility';
+import { logFilterChange } from '../../utils/analytics';
 
 const Filters: React.FC<FiltersProps> = ({ onChange, selectedFilter }) => {
   const filters = [
@@ -16,12 +16,17 @@ const Filters: React.FC<FiltersProps> = ({ onChange, selectedFilter }) => {
     { label: 'Personalizado', value: 'custom' },
   ];
 
+  const handleFilterChange = (value: string, label: string) => {
+    onChange(value);
+    logFilterChange(label, value);
+  };
+
   return (
     <>
       {filters.map((filter) => (
         <>
           <Grid item>
-            <Button disableElevation key={filter.value} variant={selectedFilter === filter.value ? 'contained' : 'text'} color="inherit" onClick={() => onChange(filter.value)}>
+            <Button disableElevation key={filter.value} variant={selectedFilter === filter.value ? 'contained' : 'text'} color="inherit" onClick={() => handleFilterChange(filter.value, filter.label)}>
               {filter.label === 'Personalizado' ? (
                 <>
                   <EventIcon color="secondary" /> {filter.label}
